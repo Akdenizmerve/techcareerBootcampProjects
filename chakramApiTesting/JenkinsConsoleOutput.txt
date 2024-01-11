@@ -1,0 +1,150 @@
+Started by user merveakdeniz
+Obtained Jenkinsfile from git https://github.com/Akdenizmerve/chakramApiTesting.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /Users/doganakdeniz/.jenkins/workspace/chakram-api-testing@2
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential personalreasons
+Cloning the remote Git repository
+Cloning repository https://github.com/Akdenizmerve/chakramApiTesting.git
+ > git init /Users/doganakdeniz/.jenkins/workspace/chakram-api-testing@2 # timeout=10
+Fetching upstream changes from https://github.com/Akdenizmerve/chakramApiTesting.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2 (Apple Git-143)'
+using GIT_ASKPASS to set credentials personalreasons
+ > git fetch --tags --force --progress -- https://github.com/Akdenizmerve/chakramApiTesting.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Akdenizmerve/chakramApiTesting.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 576220f995257766265bb0d4f9ea82794e6fb28a (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 576220f995257766265bb0d4f9ea82794e6fb28a # timeout=10
+Commit message: "init"
+ > git rev-list --no-walk 38428a2fb995c4349f507a2f0b0f7a8dbb966238 # timeout=10
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /Users/doganakdeniz/.jenkins/workspace/chakram-api-testing@2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Akdenizmerve/chakramApiTesting.git # timeout=10
+Fetching upstream changes from https://github.com/Akdenizmerve/chakramApiTesting.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2 (Apple Git-143)'
+ > git fetch --tags --force --progress -- https://github.com/Akdenizmerve/chakramApiTesting.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 576220f995257766265bb0d4f9ea82794e6fb28a (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 576220f995257766265bb0d4f9ea82794e6fb28a # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b main 576220f995257766265bb0d4f9ea82794e6fb28a # timeout=10
+Commit message: "init"
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Kurulum)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ npm install chakram
+
+up to date, audited 138 packages in 2s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+3 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+[Pipeline] sh
++ npm install mocha
+
+up to date, audited 138 packages in 1s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+3 moderate severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ npm test
+
+> test
+> mocha tests/ --timeout 90000 --exit
+
+(node:89032) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+
+  User Module
+    ✔ POST - Create User (1261ms)
+    ✔ GET - User Info (172ms)
+    ✔ PUT - User Mervik (340ms)
+    ✔ GET - Updated User Info (155ms)
+    ✔ GET - Not Found User Info (367ms)
+    ✔ DELETE - User Mervik (159ms)
+    ✔ GET - Deleted User Info (156ms)
+    ✔ POST - Create With Array (202ms)
+    ✔ POST - Create With List (154ms)
+
+
+  9 passing (3s)
+
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

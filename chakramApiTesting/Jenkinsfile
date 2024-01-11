@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+  tools { nodejs "nodejs" }
+  stages {
+    stage('Checkout') {
+      steps {
+        git branch: 'main', url: 'https://github.com/Akdenizmerve/chakramApiTesting.git'
+      }
+    }
+    stage('Kurulum') {
+      steps {
+        sh 'npm install chakram'
+        sh 'npm install mocha'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+  }
+}
