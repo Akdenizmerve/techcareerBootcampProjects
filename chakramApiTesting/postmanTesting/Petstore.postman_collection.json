@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "0c06c29f-e8f4-4884-8f81-83bbfdf80711",
+		"name": "Petstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30721930"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/mervik",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"mervik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 3456,\n  \"username\": \"mervik\",\n  \"firstName\": \"Merve\",\n  \"lastName\": \"Akdeniz\",\n  \"email\": \"mervik@gmail.com\",\n  \"password\": \"224e581c\",\n  \"phone\": \"05078601359\",\n  \"userStatus\": 0\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create With List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n            {\n                \"id\": 9012024,\n                \"username\": \"yumak\",\n                \"firstName\": \"yumak\",\n                \"lastName\": \"akdeniz\",\n                \"email\": \"yumak@kedi.com\",\n                \"password\": \"miyav\",\n                \"phone\": \"05078601359\",\n                \"userStatus\": 0\n            },\n            {\n                \"id\": 10012024,\n                \"username\": \"limon\",\n                \"firstName\": \"limon\",\n                \"lastName\": \"dereli\",\n                \"email\": \"limon@kus.com\",\n                \"password\": \"cikcik\",\n                \"phone\": \"05078601359\",\n                \"userStatus\": 0\n            }\n]"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/createWithList",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"createWithList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create With Array",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n            {\n                \"id\": 9012024,\n                \"username\": \"yumak\",\n                \"firstName\": \"yumak\",\n                \"lastName\": \"akdeniz\",\n                \"email\": \"yumak@kedi.com\",\n                \"password\": \"miyav\",\n                \"phone\": \"05078601359\",\n                \"userStatus\": 0\n            },\n            {\n                \"id\": 10012024,\n                \"username\": \"limon\",\n                \"firstName\": \"limon\",\n                \"lastName\": \"dereli\",\n                \"email\": \"limon@kus.com\",\n                \"password\": \"cikcik\",\n                \"phone\": \"05078601359\",\n                \"userStatus\": 0\n            }\n]"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/createWithArray",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"createWithArray"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 3456,\n  \"username\": \"mervik\",\n  \"firstName\": \"Merve\",\n  \"lastName\": \"Karadeniz\",\n  \"email\": \"mervik@gmail.com\",\n  \"password\": \"224e581c\",\n  \"phone\": \"05078601359\",\n  \"userStatus\": 0\n}"
+						},
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/mervik",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"mervik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://petstore.swagger.io/v2/user/MerveAkdeniz",
+							"protocol": "https",
+							"host": [
+								"petstore",
+								"swagger",
+								"io"
+							],
+							"path": [
+								"v2",
+								"user",
+								"MerveAkdeniz"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
